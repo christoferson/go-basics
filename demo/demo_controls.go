@@ -7,6 +7,7 @@ func DemoControls() {
 	demoElseIf()
 	demoCase()
 	demoForLoop()
+	demoForRange()
 }
 
 func demoIfElse() {
@@ -62,4 +63,20 @@ func demoForLoop() {
 	   sum += sum  
 	   fmt.Print(sum, "-")  
 	}  
+}
+
+func demoForRange() {
+
+	nums := []int{2, 3, 4}  
+	sum := 0  
+	for _, value := range nums {
+	   sum += value  
+	}  
+	fmt.Println("sum:", sum)  
+
+	kvs := map[string]string{"1":"mango","2":"apple","3":"banana"}  
+   for k, v := range kvs {  
+      fmt.Printf("%s -> %s\n", k, v)  
+   } 
+
 }
