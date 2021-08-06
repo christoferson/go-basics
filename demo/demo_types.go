@@ -1,6 +1,6 @@
 package demo
 
-func demoTypes() {
+func DemoTypes() {
 	fmt.Println("*************** Demo Types ***************")
 
 	var i int = 35
