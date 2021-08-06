@@ -6,6 +6,7 @@ func DemoControls() {
 	demoIfElse()
 	demoElseIf()
 	demoCase()
+	demoForLoop()
 }
 
 func demoIfElse() {
@@ -49,4 +50,16 @@ func demoCase() {
 	default:
 		fmt.Print("Value is not 10,20")
 	}
+}
+
+func demoForLoop() {
+	for a := 0; a < 11; a++ {
+		fmt.Print(a, "-")
+	}
+
+	sum := 1  
+	for sum < 32 {  
+	   sum += sum  
+	   fmt.Print(sum, "-")  
+	}  
 }
