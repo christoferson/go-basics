@@ -5,6 +5,7 @@ import "strconv"
 
 
 func DemoTypes() {
+
 	fmt.Println("*************** Demo Types ***************")
 
 	var i int = 35

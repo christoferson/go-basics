@@ -3,6 +3,7 @@ package demo
 import "fmt"
 
 func DemoControls() {
+
 	fmt.Println("*************** Demo Controls ***************")
 
 	demoIfElse()
@@ -10,6 +11,7 @@ func DemoControls() {
 	demoCase()
 	demoForLoop()
 	demoForRange()
+
 }
 
 func demoIfElse() {
