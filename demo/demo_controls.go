@@ -1,5 +1,7 @@
 package demo
 
+import "fmt"
+
 func DemoControls() {
 	fmt.Println("*************** Demo Controls ***************")
 
