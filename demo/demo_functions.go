@@ -18,6 +18,8 @@ func DemoFunctions() {
 	err2, ret2 := demoFunctionWithMultiReturn(50, 23)
 	fmt.Printf("demoFunctionWithMultiReturn.Ret. %v %v", err2, ret2)
 	
+	demoRecursion()
+
 }
 
 func demoFunction(x int, y int) {
@@ -36,4 +38,29 @@ func demoFunctionWithMultiReturn(x int, y int) (error, int) {
 	}
 	fmt.Printf("DemoFunctionWithMultiReturn. %v %v", x, y)
 	return nil, x * y
+}
+
+func demoRecursion() {
+	ret := factorial(7)
+	fmt.Printf("DemoRecursion. %v", ret)
+	fmt.Println()
+}
+
+
+func factorial(num int ) int{  
+	if num == 0 {  
+	   return 1  
+	}  
+	return num * factorial(num-1)  
+ }
+
+
+ func demoClosure() {
+	number := 12
+	squareNum := func() int {
+		number *= number
+		return number
+	}
+	fmt.Printf("DemoClosure. %v", squareNum())
+	fmt.Println()
 }
