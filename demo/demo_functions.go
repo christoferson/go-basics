@@ -1,14 +1,39 @@
 package demo
 
 import fmt
+import errors
 
 func DemoFunctions() {
 
 	fmt.Println("*************** Demo Functions ***************")
 
+	demoFunction(35, 89)
 
+	ret := demoFunctionWithReturn(27, 32)
+	fmt.Printf("DemoFunctionWithReturn.Ret. %v", ret)
+
+	err1, ret1 := demoFunctionWithMultiReturn(50, 23)
+	fmt.Printf("demoFunctionWithMultiReturn.Ret. %v %v", err1, ret1)
+
+	err2, ret2 := demoFunctionWithMultiReturn(50, 23)
+	fmt.Printf("demoFunctionWithMultiReturn.Ret. %v %v", err2, ret2)
+	
 }
 
 func demoFunction(x int, y int) {
-	fmt.Println("DemoFunction. %v %v", x, y)
+	fmt.Printf("DemoFunction. %v %v", x, y)
+}
+
+func demoFunctionWithReturn(x int, y int) int {
+	fmt.Printf("DemoFunctionWithReturn. %v %v", x, y)
+	return x * y
+}
+
+func demoFunctionWithMultiReturn(x int, y int) (error, int) {
+	if x >= y {
+		err := fmt.Errorf("X %v must be less than y %v", x, y)
+		return err, 0
+	}
+	fmt.Printf("DemoFunctionWithMultiReturn. %v %v", x, y)
+	return nil, x * y
 }
