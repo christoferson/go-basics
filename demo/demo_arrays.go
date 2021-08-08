@@ -78,12 +78,12 @@ func demoSliceLiteral() {
 		i int
 		b bool
 	}{
-		{1, true},
-		{2, false},
-		{3, true},
-		{4, true},
-		{5, false},
-		{6, true},
+		{101, false},
+		{201, false},
+		{301, true},
+		{401, false},
+		{501, true},
+		{601, false},
 	}
 	fmt.Println(s)
 
@@ -91,7 +91,7 @@ func demoSliceLiteral() {
 
 func demoSliceBounds() {
 
-	slice1 := []int{2,4,8,10,12,14}  
+	slice1 := []int{1,3,5,7,9,11,13}  
 	slice2 := slice1[2:4]  
 	fmt.Println(slice2)  
 	slice3 := slice1[:3]  
@@ -105,7 +105,7 @@ func demoSliceBounds() {
 
 func demoSliceLengthCapacity() {
 
-	slice1 := []int{2,4,6,8,10,12,14}
+	slice1 := []int{1,3,5,7,9,11,13}
 	describeIntSlice(slice1)
 
 	slice2 := slice1[:0]  
