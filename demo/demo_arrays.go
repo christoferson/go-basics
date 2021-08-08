@@ -92,7 +92,7 @@ func demoSliceLiteral() {
 func demoSliceBounds() {
 
 	slice1 := []int{1,3,5,7,9,11,13}  
-	slice2 := slice1[2:4]  
+	slice2 := slice1[2:4]
 	fmt.Println(slice2)  
 	slice3 := slice1[:3]  
 	fmt.Println(slice3)  
@@ -116,5 +116,21 @@ func demoSliceLengthCapacity() {
 
 	slice4 := slice1[2:]  
 	describeIntSlice(slice4)  
+
+}
+
+func demoSliceMake() {
+
+	slice1 := make([]int, 12)  
+	describeIntSlice(slice1)
+
+	slice2 := make([]int, 0, 15)
+	describeIntSlice(slice2)
+
+	slice3 := slice1[:5]  
+	describeIntSlice(slice3) 
+	
+	slice4 := slice2[2:5]  
+	describeIntSlice(slice4)
 
 }
