@@ -1,6 +1,7 @@
 package demo
 
 import "reflect"
+import "strings"
 
 func DemoStrings() {
 
@@ -9,6 +10,8 @@ func DemoStrings() {
 	demoStrings()
 
 	demoStringsLength()
+
+	demoStringsLibrary()
 
 }
 
@@ -25,5 +28,19 @@ func demoStringsLength() {
 
 	var x string = "sample string"  
 	fmt.Println(len(x))
+
+}
+
+
+func demoStringsLibrary() {
+
+	var x string = "sample string"  
+	fmt.Println(strings.ToUpper(x))
+	fmt.Println(strings.ToLower(x))
+
+	fmt.Println(strings.HasSuffix(x, "string"))  
+
+	var arr = []string{"a","b","c","d", "e"}  
+	fmt.Println(strings.Join(arr,"*")) // a*b*c*d*e
 
 }
