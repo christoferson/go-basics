@@ -102,3 +102,19 @@ func demoSliceBounds() {
 
 }
 
+
+func demoSliceLengthCapacity() {
+
+	slice1 := []int{2,4,6,8,10,12,14}
+	describeIntSlice(slice1)
+
+	slice2 := slice1[:0]  
+	describeIntSlice(slice2)
+
+	slice3 := slice1[:4]
+	describeIntSlice(slice3)  
+
+	slice4 := slice1[2:]  
+	describeIntSlice(slice4)  
+
+}
