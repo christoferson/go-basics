@@ -46,7 +46,10 @@ func demoStringsLibrary() {
 	var str = "abc " 
 	fmt.Println(strings.Repeat(str, 5))  
 
-	str2:= "Loren ipsum"  
+	str2 := "Loren ipsum"  
 	fmt.Println(strings.Contains(str2, "ips"))  
+
+	str3 := "Loren ipsum" 
+	fmt.Println(strings.Index(str3, "ips"))  
 
 }
