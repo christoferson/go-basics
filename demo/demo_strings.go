@@ -43,4 +43,10 @@ func demoStringsLibrary() {
 	var arr = []string{"a","b","c","d", "e"}  
 	fmt.Println(strings.Join(arr,"*")) // a*b*c*d*e
 
+	var str = "abc " 
+	fmt.Println(strings.Repeat(str, 5))  
+
+	str2:= "Loren ipsum"  
+	fmt.Println(strings.Contains(str2, "ips"))  
+
 }
