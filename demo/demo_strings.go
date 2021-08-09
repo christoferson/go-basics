@@ -47,9 +47,15 @@ func demoStringsLibrary() {
 	fmt.Println(strings.Repeat(str, 5))  
 
 	str2 := "Loren ipsum"  
-	fmt.Println(strings.Contains(str2, "ips"))  
+	fmt.Println(strings.Contains(str2, "ips"))  // true
 
 	str3 := "Loren ipsum" 
-	fmt.Println(strings.Index(str3, "ips"))  
+	fmt.Println(strings.Index(str3, "ips"))  // 6
+
+	str4 := "Loren ipsume"  
+	fmt.Println(strings.Count(str4, "e"))  // 2
+
+	str5 := "Loren ipsumeDe"  
+	fmt.Println(strings.Replace(str5, "e", "Z", 2))	 // LorZn ipsumZDe
 
 }
