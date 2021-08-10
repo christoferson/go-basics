@@ -58,4 +58,10 @@ func demoStringsLibrary() {
 	str5 := "Loren ipsumeDe"  
 	fmt.Println(strings.Replace(str5, "e", "Z", 2))	 // LorZn ipsumZDe
 
+	fmt.Println(strings.Compare("123", "456"))  
+	fmt.Println(strings.Compare("abc", "abc"))  
+	fmt.Println(strings.Compare("abc", "ABC"))  
+
+	fmt.Println("'" + strings.TrimSpace(" \t\n Abns djsie siiens Ajdd  \n\t\r\n") + "'") 
+
 }
