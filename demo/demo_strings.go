@@ -75,8 +75,13 @@ func demoStringsLibrary() {
 func demoRegex() {
 
 	re := regexp.MustCompile(".com")  
+	
     fmt.Println(re.FindString("amazon.com"))  
     fmt.Println(re.FindString("stacktrace.org"))  
     fmt.Println(re.FindString("wikipedia.com"))  
+
+	fmt.Println(re.FindStringIndex("amazon.com"))  
+    fmt.Println(re.FindStringIndex("stacktrace.org"))  
+    fmt.Println(re.FindStringIndex("wikipedia.com"))  
 
 }
