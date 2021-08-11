@@ -64,4 +64,10 @@ func demoStringsLibrary() {
 
 	fmt.Println("'" + strings.TrimSpace(" \t\n Abns djsie siiens Ajdd  \n\t\r\n") + "'") 
 
+
+	fmt.Println(strings.ContainsAny("Apple", "A"))  
+	fmt.Println(strings.ContainsAny("Algebra", "A & g"))  
+	fmt.Println(strings.ContainsAny("Random", ""))  
+	fmt.Println(strings.ContainsAny("", ""))  
+
 }
