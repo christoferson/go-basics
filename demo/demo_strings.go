@@ -71,3 +71,12 @@ func demoStringsLibrary() {
 	fmt.Println(strings.ContainsAny("", ""))  
 
 }
+
+func demoRegex() {
+
+	re := regexp.MustCompile(".com")  
+    fmt.Println(re.FindString("amazon.com"))  
+    fmt.Println(re.FindString("stacktrace.org"))  
+    fmt.Println(re.FindString("wikipedia.com"))  
+
+}
