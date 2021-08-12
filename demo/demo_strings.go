@@ -75,7 +75,7 @@ func demoStringsLibrary() {
 func demoRegex() {
 
 	re := regexp.MustCompile(".com")  
-	
+
     fmt.Println(re.FindString("amazon.com"))  
     fmt.Println(re.FindString("stacktrace.org"))  
     fmt.Println(re.FindString("wikipedia.com"))  
@@ -83,5 +83,9 @@ func demoRegex() {
 	fmt.Println(re.FindStringIndex("amazon.com"))  
     fmt.Println(re.FindStringIndex("stacktrace.org"))  
     fmt.Println(re.FindStringIndex("wikipedia.com"))  
+
+    re2 := regexp.MustCompile("j([a-z]+)ing")  
+    fmt.Println(re2.FindStringSubmatch("2 people jogging in the park"))  
+    fmt.Println(re2.FindStringSubmatch("3 monkeys jumping on the trampoline"))  
 
 }
