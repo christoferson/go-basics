@@ -12,6 +12,7 @@ func DemoStruct() {
 	
 }
 
+//
 
 type Character struct {  
 	name string  
@@ -23,6 +24,8 @@ func demoStruct() {
 	fmt.Println(c)  
 	fmt.Println(c.name) 
 }
+
+//
 
 type Character2 struct {  
 	name string  
@@ -48,10 +51,30 @@ type Character3 struct {
 }
 
 func (c Character3) greet()  {  
-	fmt.Printf("%v says hello", c.name)   
+	fmt.Printf("C3 %v says hello", c.name)   
  }
 
- func demoStructMethod() {
+func demoStructMethod() {
 	c := Character3{name: "Conan", race: "Human"}  
 	c.greet()
+	fmt.Printf("Name: %v", c.name)
+	fmt.Println()
+}
+
+//
+
+type Character4 struct {  
+	name  string  
+	race  string  
+}
+
+func (c *Character4) greet()  {
+	fmt.Printf("C4 %v says hello", c.name)   
+ }
+
+func demoStructMethodPointer() {
+	c := &Character4{name: "Conan", race: "Human"}  
+	c.greet() 
+	fmt.Printf("Name: %v", c.name)
+	fmt.Println()
 }
