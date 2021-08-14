@@ -7,6 +7,8 @@ func DemoStruct() {
 	demoStruct()
 
 	demoStructEmbedded()
+
+	demoStructMethod()
 	
 }
 
@@ -36,4 +38,20 @@ func demoStructEmbedded() {
 	c := NonPlayableCharacter2{npcid: "578", Character2:Character2{name: "Conan", race: "Human"}}  
 	fmt.Println(c)  
 	fmt.Println(c.npcid) 
+}
+
+
+//
+type Character3 struct {  
+	name  string  
+	race  string  
+}
+
+func (c Character3) greet()  {  
+	fmt.Printf("%v says hello", c.name)   
+ }
+
+ func demoStructMethod() {
+	c := Character3{name: "Conan", race: "Human"}  
+	c.greet()
 }
