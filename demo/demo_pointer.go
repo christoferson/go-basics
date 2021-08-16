@@ -5,6 +5,12 @@ func DemoPointer() {
 	fmt.Println("*************** Demo Pointer ***************")
 
 	demoPointer()
+
+	fmt.Println()
+
+	demoPointerRepoint()
+
+	fmt.Println()
 	
 }
 
@@ -21,6 +27,24 @@ func demoPointer() {
 }
 
 func modifyIntPointer(x *int) {  
+	*x = 5
+}
+
+//
+
+func demoPointerRepoint() {
+
+	x := 10
+
+	fmt.Printf("Before: Value of X is %v", x)
+
+	repointIntPointer(&x)
+
+	fmt.Printf("After: Value of X is %v", x)
+
+}
+
+func repointIntPointer(x *int) {  
 	*x = 5
 }
 
