@@ -11,4 +11,7 @@ func main() {
 
 	DemoControls()
 
+
+	DemoReflect()
+
 }
