@@ -7,7 +7,7 @@ func DemoMap() {
 
 	demoMap()
 
-
+	demoMapMake()
 	
 }
 
@@ -19,3 +19,15 @@ func demoMap() {
 
 }
 
+func demoMapMake() {
+
+	m := make(map[string]int)  
+	fmt.Println(m)  
+	m["Conan"] = 10  
+	m["Natalya"] = 20  
+	m["Griswold"] = 30  
+	fmt.Println(m)  
+	m["Natalya"] = 24
+	fmt.Println(m)  
+
+}
