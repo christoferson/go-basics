@@ -13,6 +13,8 @@ func DemoMap() {
 
 	demoMapGet()
 
+	demoMapOfStruct()
+
 }
 
 func demoMap() {
@@ -55,3 +57,16 @@ func demoMapDelete() {
 	fmt.Println(m)  
 	fmt.Println("[Conan]:", m["Conan"])  
  }  
+
+
+ type MapDemoCoordinates struct {  
+	X, Y float64  
+ }  
+
+ func demoMapOfStruct() {  
+	var m = map[string]MapDemoCoordinates{  
+		"C1": MapDemoCoordinates{56, 87},  
+		"C2": MapDemoCoordinates{78, 18},  
+	}
+	fmt.Println(m)  
+}
