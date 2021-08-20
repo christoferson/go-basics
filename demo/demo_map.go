@@ -10,7 +10,9 @@ func DemoMap() {
 	demoMapMake()
 	
 	demoMapDelete()
-	
+
+	demoMapGet()
+
 }
 
 func demoMap() {
@@ -43,3 +45,13 @@ func demoMapDelete() {
 	delete(m, "Griswold")  
 	fmt.Println(m)  
  }     
+
+
+ func demoMapGet() {  
+	m := make(map[string]int)  
+	m["Conan"] = 10  
+	m["Natalya"] = 20  
+	m["Griswold"] = 30  
+	fmt.Println(m)  
+	fmt.Println("[Conan]:", m["Conan"])  
+ }  
