@@ -1,21 +1,22 @@
 package demo
 
-import "fmt"
-import "strconv"
-
+import (
+	"fmt"
+	"strconv"
+)
 
 func DemoTypes() {
 
 	fmt.Println("*************** Demo Types ***************")
 
 	var i int = 35
-	fmt.Printf("Type=%T Value=%v", i, i)
+	fmt.Printf("Type=%T Value=%v \n", i, i)
 	var f float64 = 76.87
-	fmt.Printf("Type=%T Value=%v", f, f)
+	fmt.Printf("Type=%T Value=%v \n", f, f)
 	var b bool = true
-	fmt.Printf("Type=%T Value=%v", b, b)
+	fmt.Printf("Type=%T Value=%v \n", b, b)
 	var s string = "ipsum"
-	fmt.Printf("Type=%T Value=%v", s, s)
+	fmt.Printf("Type=%T Value=%v \n", s, s)
 }
 
 func demoContants() {
@@ -25,7 +26,7 @@ func demoContants() {
 
 	z := X * Y
 
-	fmt.Printf("Type=%T Value=%v", z, z)
+	fmt.Printf("Type=%T Value=%v \n", z, z)
 
 }
 
@@ -37,8 +38,8 @@ func demoCast() {
 	x := float64(i)
 	y := int(f)
 
-	fmt.Printf("Type=%T Value=%v", x, x)
-	fmt.Printf("Type=%T Value=%v", y, y)
+	fmt.Printf("Type=%T Value=%v \n", x, x)
+	fmt.Printf("Type=%T Value=%v \n", y, y)
 
 	var str1 string = "101"
 	var str2 string = "10.123"
@@ -46,7 +47,7 @@ func demoCast() {
 	nint, _ := strconv.ParseInt(str1, 0, 64)
 	nfloat, _ := strconv.ParseFloat(str2, 64)
 
-	fmt.Printf("Type=%T Value=%v", nint, nint)
-	fmt.Printf("Type=%T Value=%v", nfloat, nfloat)
+	fmt.Printf("Type=%T Value=%v \n", nint, nint)
+	fmt.Printf("Type=%T Value=%v \n", nfloat, nfloat)
 
 }

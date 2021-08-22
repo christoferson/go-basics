@@ -15,4 +15,10 @@ func main() {
 
 	demo.DemoReflect()
 
+	demo.DemoArrays()
+
+	demo.DemoErrors()
+
+	demo.DemoFunctions()
+
 }
