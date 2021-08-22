@@ -1,7 +1,11 @@
 package demo
 
-import "reflect"
-import "strings"
+import (
+	"fmt"
+	"reflect"
+	"regexp"
+	"strings"
+)
 
 func DemoStrings() {
 
@@ -15,77 +19,74 @@ func DemoStrings() {
 
 }
 
-
 func demoStrings() {
 
-	var x string = "sample string"  
-	fmt.Println(x)  
-	fmt.Println(reflect.TypeOf(x))  
+	var x string = "sample string"
+	fmt.Println(x)
+	fmt.Println(reflect.TypeOf(x))
 
 }
 
 func demoStringsLength() {
 
-	var x string = "sample string"  
+	var x string = "sample string"
 	fmt.Println(len(x))
 
 }
 
-
 func demoStringsLibrary() {
 
-	var x string = "sample string"  
+	var x string = "sample string"
 	fmt.Println(strings.ToUpper(x))
 	fmt.Println(strings.ToLower(x))
 
-	fmt.Println(strings.HasSuffix(x, "string"))  
+	fmt.Println(strings.HasSuffix(x, "string"))
 
-	var arr = []string{"a","b","c","d", "e"}  
-	fmt.Println(strings.Join(arr,"*")) // a*b*c*d*e
+	var arr = []string{"a", "b", "c", "d", "e"}
+	fmt.Println(strings.Join(arr, "*")) // a*b*c*d*e
 
-	var str = "abc " 
-	fmt.Println(strings.Repeat(str, 5))  
+	var str = "abc "
+	fmt.Println(strings.Repeat(str, 5))
 
-	str2 := "Loren ipsum"  
-	fmt.Println(strings.Contains(str2, "ips"))  // true
+	str2 := "Loren ipsum"
+	fmt.Println(strings.Contains(str2, "ips")) // true
 
-	str3 := "Loren ipsum" 
-	fmt.Println(strings.Index(str3, "ips"))  // 6
+	str3 := "Loren ipsum"
+	fmt.Println(strings.Index(str3, "ips")) // 6
 
-	str4 := "Loren ipsume"  
-	fmt.Println(strings.Count(str4, "e"))  // 2
+	str4 := "Loren ipsume"
+	fmt.Println(strings.Count(str4, "e")) // 2
 
-	str5 := "Loren ipsumeDe"  
-	fmt.Println(strings.Replace(str5, "e", "Z", 2))	 // LorZn ipsumZDe
+	str5 := "Loren ipsumeDe"
+	fmt.Println(strings.Replace(str5, "e", "Z", 2)) // LorZn ipsumZDe
 
-	fmt.Println(strings.Compare("123", "456"))  
-	fmt.Println(strings.Compare("abc", "abc"))  
-	fmt.Println(strings.Compare("abc", "ABC"))  
+	fmt.Println(strings.Compare("123", "456"))
+	fmt.Println(strings.Compare("abc", "abc"))
+	fmt.Println(strings.Compare("abc", "ABC"))
 
-	fmt.Println("'" + strings.TrimSpace(" \t\n Abns djsie siiens Ajdd  \n\t\r\n") + "'") 
+	fmt.Println("'" + strings.TrimSpace(" \t\n Abns djsie siiens Ajdd  \n\t\r\n") + "'")
 
-
-	fmt.Println(strings.ContainsAny("Apple", "A"))  
-	fmt.Println(strings.ContainsAny("Algebra", "A & g"))  
-	fmt.Println(strings.ContainsAny("Random", ""))  
-	fmt.Println(strings.ContainsAny("", ""))  
+	fmt.Println(strings.ContainsAny("Apple", "A"))
+	fmt.Println(strings.ContainsAny("Algebra", "A & g"))
+	fmt.Println(strings.ContainsAny("Random", ""))
+	fmt.Println(strings.ContainsAny("", ""))
 
 }
 
 func demoRegex() {
 
-	re := regexp.MustCompile(".com")  
+	re := regexp.MustCompile(".com")
 
-    fmt.Println(re.FindString("amazon.com"))  
-    fmt.Println(re.FindString("stacktrace.org"))  
-    fmt.Println(re.FindString("wikipedia.com"))  
+	fmt.Println(re.FindString("amazon.com"))
+	fmt.Println(re.FindString("stacktrace.org"))
+	fmt.Println(re.FindString("wikipedia.com"))
 
-	fmt.Println(re.FindStringIndex("amazon.com"))  
-    fmt.Println(re.FindStringIndex("stacktrace.org"))  
-    fmt.Println(re.FindStringIndex("wikipedia.com"))  
+	fmt.Println(re.FindStringIndex("amazon.com"))
+	fmt.Println(re.FindStringIndex("stacktrace.org"))
+	fmt.Println(re.FindStringIndex("wikipedia.com"))
 
-    re2 := regexp.MustCompile("j([a-z]+)ing")  
-    fmt.Println(re2.FindStringSubmatch("2 people jogging in the park"))  
-    fmt.Println(re2.FindStringSubmatch("3 monkeys jumping on the trampoline"))  
+	re2 := regexp.MustCompile("j([a-z]+)ing")
+	fmt.Println(re2.FindStringSubmatch("2 people jogging in the park"))
+	fmt.Println(re2.FindStringSubmatch("3 monkeys jumping on the trampoline"))
 
 }

@@ -64,8 +64,8 @@ type MapDemoCoordinates struct {
 
 func demoMapOfStruct() {
 	var m = map[string]MapDemoCoordinates{
-		"C1": MapDemoCoordinates{56, 87},
-		"C2": MapDemoCoordinates{78, 18},
+		"C1": {56, 87},
+		"C2": {78, 18},
 	}
 	fmt.Println(m)
 }

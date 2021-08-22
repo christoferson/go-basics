@@ -1,17 +1,18 @@
 package main
 
-import "fmt"
-import "demo"
+import (
+	"fmt"
+	"go-basics/demo"
+)
 
 func main() {
 
 	fmt.Println("demo")
 
-	DemoTypes()
+	demo.DemoTypes()
 
-	DemoControls()
+	demo.DemoControls()
 
-
-	DemoReflect()
+	demo.DemoReflect()
 
 }

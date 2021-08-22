@@ -1,5 +1,7 @@
 package demo
 
+import "fmt"
+
 func DemoPointer() {
 
 	fmt.Println("*************** Demo Pointer ***************")
@@ -11,7 +13,7 @@ func DemoPointer() {
 	demoPointerRepoint()
 
 	fmt.Println()
-	
+
 }
 
 //
@@ -26,7 +28,7 @@ func demoPointer() {
 
 }
 
-func modifyIntPointer(x *int) {  
+func modifyIntPointer(x *int) {
 	*x = 5
 }
 
@@ -44,7 +46,7 @@ func demoPointerRepoint() {
 
 }
 
-func repointIntPointer(x *int) {  
+func repointIntPointer(x *int) {
 	*x = 5
 }
 
