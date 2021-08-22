@@ -1,7 +1,6 @@
 package demo
 
-import fmt
-import errors
+import "fmt"
 
 func DemoFunctions() {
 
@@ -17,7 +16,7 @@ func DemoFunctions() {
 
 	err2, ret2 := demoFunctionWithMultiReturn(50, 23)
 	fmt.Printf("demoFunctionWithMultiReturn.Ret. %v %v", err2, ret2)
-	
+
 	demoRecursion()
 
 }
@@ -46,16 +45,14 @@ func demoRecursion() {
 	fmt.Println()
 }
 
+func factorial(num int) int {
+	if num == 0 {
+		return 1
+	}
+	return num * factorial(num-1)
+}
 
-func factorial(num int ) int{  
-	if num == 0 {  
-	   return 1  
-	}  
-	return num * factorial(num-1)  
- }
-
-
- func demoClosure() {
+func demoClosure() {
 	number := 12
 	squareNum := func() int {
 		number *= number

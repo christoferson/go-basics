@@ -1,7 +1,8 @@
-package main
+package demo
 
 import (
 	"errors"
+	"fmt"
 )
 
 func DemoErrors() {

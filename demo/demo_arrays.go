@@ -1,5 +1,7 @@
 package demo
 
+import "fmt"
+
 func DemoArrays() {
 
 	fmt.Println("*************** Demo Arrays ***************")
@@ -17,7 +19,6 @@ func DemoArrays() {
 	demoSliceBounds()
 
 }
-
 
 func demoArray() {
 
@@ -46,7 +47,6 @@ func demoArrayMultidimensional() {
 
 }
 
-
 func demoSlice() {
 
 	odd := [6]int{1, 3, 5, 7, 9, 11}
@@ -61,14 +61,14 @@ func demoSlice() {
 
 func demoMultipleSlice() {
 
-	names := [4]string{"Apple", "Orange", "Banana",  "Kiwi"} 
-	 fmt.Println(names)
-	 slice1 := names[0:2] 
-	 slice2 := names[1:3] 
-	 fmt.Println(slice1, slice2) 
-	 slice2[0] = "Juice"
-	 fmt.Println(slice1, slice2) 
-	 fmt.Println(names)
+	names := [4]string{"Apple", "Orange", "Banana", "Kiwi"}
+	fmt.Println(names)
+	slice1 := names[0:2]
+	slice2 := names[1:3]
+	fmt.Println(slice1, slice2)
+	slice2[0] = "Juice"
+	fmt.Println(slice1, slice2)
+	fmt.Println(names)
 
 }
 
@@ -91,46 +91,45 @@ func demoSliceLiteral() {
 
 func demoSliceBounds() {
 
-	slice1 := []int{1,3,5,7,9,11,13}  
+	slice1 := []int{1, 3, 5, 7, 9, 11, 13}
 	slice2 := slice1[2:4]
-	fmt.Println(slice2)  
-	slice3 := slice1[:3]  
-	fmt.Println(slice3)  
-	slice4 := slice1[2:]  
-	fmt.Println(slice4)  
-	fmt.Println(slice1)  
+	fmt.Println(slice2)
+	slice3 := slice1[:3]
+	fmt.Println(slice3)
+	slice4 := slice1[2:]
+	fmt.Println(slice4)
+	fmt.Println(slice1)
 
 }
 
-
 func demoSliceLengthCapacity() {
 
-	slice1 := []int{1,3,5,7,9,11,13}
+	slice1 := []int{1, 3, 5, 7, 9, 11, 13}
 	describeIntSlice(slice1)
 
-	slice2 := slice1[:0]  
+	slice2 := slice1[:0]
 	describeIntSlice(slice2)
 
 	slice3 := slice1[:4]
-	describeIntSlice(slice3)  
+	describeIntSlice(slice3)
 
-	slice4 := slice1[2:]  
-	describeIntSlice(slice4)  
+	slice4 := slice1[2:]
+	describeIntSlice(slice4)
 
 }
 
 func demoSliceMake() {
 
-	slice1 := make([]int, 12)  
+	slice1 := make([]int, 12)
 	describeIntSlice(slice1)
 
 	slice2 := make([]int, 0, 15)
 	describeIntSlice(slice2)
 
-	slice3 := slice1[:5]  
-	describeIntSlice(slice3) 
-	
-	slice4 := slice2[2:5]  
+	slice3 := slice1[:5]
+	describeIntSlice(slice3)
+
+	slice4 := slice2[2:5]
 	describeIntSlice(slice4)
 
 }
