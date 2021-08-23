@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	fmt.Println("demo")
+	fmt.Println("Demo Go 1.17")
 
 	demo.DemoTypes()
 
@@ -26,5 +26,9 @@ func main() {
 	demo.DemoMap()
 
 	demo.DemoPointer()
+
+	demo.DemoStrings()
+
+	demo.DemoStruct()
 
 }
