@@ -24,7 +24,7 @@ func demoPointer() {
 
 	modifyIntPointer(&x)
 
-	fmt.Printf("Value of X is %v", x)
+	fmt.Printf("Value of X is %v \n", x)
 
 }
 
@@ -38,11 +38,11 @@ func demoPointerRepoint() {
 
 	x := 10
 
-	fmt.Printf("Before: Value of X is %v", x)
+	fmt.Printf("Before: Value of X is %v \n", x)
 
 	repointIntPointer(&x)
 
-	fmt.Printf("After: Value of X is %v", x)
+	fmt.Printf("After: Value of X is %v \n", x)
 
 }
 

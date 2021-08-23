@@ -21,4 +21,10 @@ func main() {
 
 	demo.DemoFunctions()
 
+	demo.DemoInterface()
+
+	demo.DemoMap()
+
+	demo.DemoPointer()
+
 }
