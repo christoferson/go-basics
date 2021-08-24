@@ -31,4 +31,8 @@ func main() {
 
 	demo.DemoStruct()
 
+	demo.DemoRecover()
+
+	demo.DemoDefer()
+
 }
