@@ -35,4 +35,6 @@ func main() {
 
 	demo.DemoDefer()
 
+	demo.DemoPanic()
+
 }
