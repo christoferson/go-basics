@@ -37,4 +37,6 @@ func main() {
 
 	demo.DemoPanic()
 
+	demo.DemoConcurrency()
+
 }
