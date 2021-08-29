@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -14,6 +15,8 @@ func DemoConcurrency() {
 	demoGoRoutine()
 	fmt.Println()
 	demoMutex()
+	fmt.Println()
+	demoAtomic()
 
 }
 
@@ -75,4 +78,26 @@ func increment(s string) {
 	}
 	waitMutex.Done()
 
+}
+
+// Demo Atomic
+
+var waitAtomic sync.WaitGroup
+var countAtomic int64
+
+func demoAtomic() {
+	waitAtomic.Add(2)
+	go incrementAtomic("foo: ")
+	go incrementAtomic("bar: ")
+	waitAtomic.Wait()
+	fmt.Println("last count value ", countAtomic)
+}
+
+func incrementAtomic(s string) {
+	for i := 0; i < 3; i++ {
+		time.Sleep(time.Duration((rand.Intn(3))) * time.Millisecond)
+		atomic.AddInt64(&countAtomic, 1)
+		fmt.Println(s, i, "Count ->", countAtomic)
+	}
+	waitAtomic.Done()
 }
