@@ -17,13 +17,15 @@ func DemoConcurrency() {
 	demoMutex()
 	fmt.Println()
 	demoAtomic()
+	fmt.Println()
+	demoChannel()
 
 }
 
 // Demo Go Routine
 
 func demoGoRoutine() {
-
+	fmt.Println("--- Try Go Routine ---")
 	wg.Add(2)
 	go routine1()
 	go routine2()
@@ -56,7 +58,7 @@ var count int
 var mutex sync.Mutex
 
 func demoMutex() {
-
+	fmt.Println("--- Try Mutex ---")
 	waitMutex.Add(2)
 	go increment("foo: ")
 	go increment("bar: ")
@@ -86,6 +88,7 @@ var waitAtomic sync.WaitGroup
 var countAtomic int64
 
 func demoAtomic() {
+	fmt.Println("--- Try Atomic Variable ---")
 	waitAtomic.Add(2)
 	go incrementAtomic("foo: ")
 	go incrementAtomic("bar: ")
@@ -100,4 +103,23 @@ func incrementAtomic(s string) {
 		fmt.Println(s, i, "Count ->", countAtomic)
 	}
 	waitAtomic.Done()
+}
+
+// Demo Channel
+
+func demoChannel() {
+	fmt.Println("--- Try Channel ---")
+	done := make(chan bool, 1)
+	go demoChannelWork(done)
+	<-done
+}
+
+func demoChannelWork(done chan bool) {
+	fmt.Println("Start Channel Work...")
+	for i := 0; i < 2; i++ {
+		time.Sleep(time.Second)
+		fmt.Printf("Do Channel Work : %v \n", i)
+	}
+	fmt.Println("End Channel Work")
+	done <- true
 }
