@@ -19,6 +19,8 @@ func DemoConcurrency() {
 	demoAtomic()
 	fmt.Println()
 	demoChannel()
+	fmt.Println()
+	demoWorkerPool()
 
 }
 
@@ -122,4 +124,32 @@ func demoChannelWork(done chan bool) {
 	}
 	fmt.Println("End Channel Work")
 	done <- true
+}
+
+// Try Worker Pool
+
+func demoWorkerPoolTask(id int, jobs <-chan int, results chan<- int) {
+	for j := range jobs {
+		fmt.Println("Worker", id, "processing job", j)
+		time.Sleep(time.Second)
+		results <- j * 2
+	}
+}
+
+func demoWorkerPool() {
+	fmt.Println("--- Try Worker Pool ---")
+	job := make(chan int, 10)
+	result := make(chan int, 10)
+	for w := 1; w <= 2; w++ {
+		go demoWorkerPoolTask(w, job, result)
+	}
+	for j := 1; j <= 5; j++ {
+		job <- j
+	}
+	fmt.Println("Finished Job Submission.")
+	close(job)
+	for a := 1; a <= 5; a++ {
+		<-result
+	}
+	fmt.Println("Finished Jobs.")
 }
