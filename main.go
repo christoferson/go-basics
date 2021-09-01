@@ -39,4 +39,6 @@ func main() {
 
 	demo.DemoConcurrency()
 
+	demo.DemoTime()
+
 }
