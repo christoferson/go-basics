@@ -11,6 +11,8 @@ func DemoTime() {
 	demoCurrentTime()
 
 	demoTimeComponents()
+
+	demoTimeComparison()
 }
 
 func demoCurrentTime() {
@@ -38,4 +40,15 @@ func demoTimeComponents() {
 
 	fmt.Println(DOB.Weekday())
 
+}
+
+func demoTimeComparison() {
+
+	fmt.Println("--- Try Time Comparison ---")
+	DOB := time.Date(2021, 07, 28, 15, 27, 42, 517, time.Local)
+	present := time.Now()
+
+	fmt.Println(DOB.Before(present))
+	fmt.Println(DOB.After(present))
+	fmt.Println(DOB.Equal(present))
 }
