@@ -13,6 +13,8 @@ func DemoTime() {
 	demoTimeComponents()
 
 	demoTimeComparison()
+
+	demoTimeArithmetic()
 }
 
 func demoCurrentTime() {
@@ -51,4 +53,20 @@ func demoTimeComparison() {
 	fmt.Println(DOB.Before(present))
 	fmt.Println(DOB.After(present))
 	fmt.Println(DOB.Equal(present))
+}
+
+func demoTimeArithmetic() {
+	fmt.Println("--- Try Time Arithmetic ---")
+	DOB := time.Date(2021, 07, 28, 15, 27, 42, 517, time.Local)
+	present := time.Now()
+
+	diff := present.Sub(DOB)
+	fmt.Println(diff)
+	fmt.Println(diff.Hours())
+	fmt.Println(diff.Minutes())
+	fmt.Println(diff.Seconds())
+	fmt.Println(diff.Nanoseconds())
+	fmt.Println(DOB.Add(diff))
+	fmt.Println(DOB.Add(-diff))
+
 }
