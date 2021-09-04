@@ -15,6 +15,8 @@ func DemoTime() {
 	demoTimeComparison()
 
 	demoTimeArithmetic()
+
+	demoTimeFormat()
 }
 
 func demoCurrentTime() {
@@ -68,5 +70,18 @@ func demoTimeArithmetic() {
 	fmt.Println(diff.Nanoseconds())
 	fmt.Println(DOB.Add(diff))
 	fmt.Println(DOB.Add(-diff))
+
+}
+
+func demoTimeFormat() {
+	fmt.Println("--- Try Time Format ---")
+	present := time.Now()
+
+	fmt.Println(present.Format("2006-01-02"))
+	fmt.Println(present.Format("Monday January 02, 2006"))
+	fmt.Println(present.Format("Mon 02 January 2006"))
+
+	fmt.Println(present.Format("15:04:05"))
+	fmt.Println(present.Format("03:04:05 PM"))
 
 }
