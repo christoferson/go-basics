@@ -19,6 +19,8 @@ func DemoTime() {
 	demoTimeFormat()
 
 	demoTimeEpoch()
+
+	demoTimeTicker()
 }
 
 func demoCurrentTime() {
@@ -105,5 +107,21 @@ func demoTimeEpoch() {
 	p(nanos)
 	p(time.Unix(secs, 0))
 	p(time.Unix(0, nanos))
+
+}
+
+func demoTimeTicker() {
+
+	fmt.Println("--- Try Time Ticker ---")
+
+	tickerValue := time.NewTicker(time.Millisecond * 100)
+	go func() {
+		for t := range tickerValue.C {
+			fmt.Println("Tick at", t)
+		}
+	}()
+	time.Sleep(time.Millisecond * 500)
+	tickerValue.Stop()
+	fmt.Println("Ticker stopped")
 
 }
