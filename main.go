@@ -41,4 +41,6 @@ func main() {
 
 	demo.DemoTime()
 
+	demo.DemoIO()
+
 }
