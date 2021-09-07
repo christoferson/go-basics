@@ -2,6 +2,8 @@ package demo
 
 import (
 	"fmt"
+	"log"
+	"sync"
 	"time"
 )
 
@@ -21,6 +23,8 @@ func DemoTime() {
 	demoTimeEpoch()
 
 	demoTimeTicker()
+
+	demoTimeTickerWithGoRoutine()
 }
 
 func demoCurrentTime() {
@@ -124,4 +128,29 @@ func demoTimeTicker() {
 	tickerValue.Stop()
 	fmt.Println("Ticker stopped")
 
+}
+
+// Try Time Ticker 2
+
+var waitTicker sync.WaitGroup
+
+func demoTimeTickerJob() {
+	i := 1
+	for _ = range time.Tick(2 * time.Second) {
+		log.Printf("\tA: Let's have fun: %v %v ", "\t B : Okay!", i)
+		i = i + 1
+		if i > 3 {
+			break
+		}
+	}
+	waitTicker.Done()
+	log.Printf("\tComplete")
+}
+
+func demoTimeTickerWithGoRoutine() {
+	fmt.Println("--- Try Time Ticker on Go Routine ---")
+	waitTicker.Add(1)
+	go demoTimeTickerJob()
+	//select {} //The select statement lets a goroutine wait on multiple communication operations.
+	waitTicker.Wait()
 }
