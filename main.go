@@ -43,4 +43,6 @@ func main() {
 
 	demo.DemoIO()
 
+	demo.DemoCollection()
+
 }
