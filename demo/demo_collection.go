@@ -9,12 +9,12 @@ func DemoCollection() {
 
 	fmt.Println("*************** Demo Collection ***************")
 
-	demoSortArray()
+	demoSortIntArray()
 }
 
-func demoSortArray() {
+func demoSortIntArray() {
 
-	fmt.Println("--- Try Sort Array ---")
+	fmt.Println("--- Try Integer Sort Array ---")
 
 	intValue := []int{57, 12, 20, 5, 8, 2}
 	sort.Ints(intValue)
