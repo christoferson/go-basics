@@ -12,6 +12,8 @@ func DemoCollection() {
 	demoSortIntArray()
 
 	demoSortFloatArray()
+
+	demoSortStringArray()
 }
 
 func demoSortIntArray() {
@@ -31,5 +33,15 @@ func demoSortFloatArray() {
 	floatValue := []float64{12.7, 25.1, 15.2, 18.32}
 	sort.Float64s(floatValue)
 	fmt.Println("floatValue:   ", floatValue)
+
+}
+
+func demoSortStringArray() {
+
+	fmt.Println("--- Try String Sort Array ---")
+
+	stringValue := []string{"Orange", "Apple", "Kiwi", "Banana"}
+	sort.Strings(stringValue)
+	fmt.Println("Strings:", stringValue)
 
 }
