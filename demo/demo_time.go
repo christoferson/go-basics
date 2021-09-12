@@ -136,7 +136,7 @@ var waitTicker sync.WaitGroup
 
 func demoTimeTickerJob() {
 	i := 1
-	for _ = range time.Tick(2 * time.Second) {
+	for range time.Tick(2 * time.Second) {
 		log.Printf("\tA: Let's have fun: %v %v ", "\t B : Okay!", i)
 		i = i + 1
 		if i > 3 {
