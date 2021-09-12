@@ -45,4 +45,6 @@ func main() {
 
 	demo.DemoCollection()
 
+	demo.DemoJSON()
+
 }
