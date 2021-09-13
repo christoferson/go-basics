@@ -13,6 +13,8 @@ func DemoJSON() {
 
 	demoMarshallStruct()
 
+	demoUnmarshallBasic()
+
 }
 
 func demoMarshallBasic() {
@@ -56,5 +58,24 @@ func demoMarshallStruct() {
 	res2D := &mstruct2{Position: 1, Planet: []string{"mercury", "venus", "earth"}}
 	res2B, _ := json.Marshal(res2D)
 	fmt.Println(string(res2B))
+
+}
+
+func demoUnmarshallBasic() {
+
+	fmt.Println("--- Try UnMarshall Basic ---")
+
+	jsonstr := `{"pi":6.13,"place":["New York","New Delhi"]}`
+	byt := []byte(jsonstr)
+	var dat map[string]interface{}
+	if err := json.Unmarshal(byt, &dat); err != nil {
+		panic(err)
+	}
+	fmt.Println(dat)
+	num := dat["pi"].(float64)
+	fmt.Println(num)
+	strs := dat["place"].([]interface{})
+	str1 := strs[0].(string)
+	fmt.Println(str1)
 
 }
