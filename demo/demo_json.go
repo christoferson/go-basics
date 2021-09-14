@@ -3,6 +3,7 @@ package demo
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 )
 
 func DemoJSON() {
@@ -14,6 +15,8 @@ func DemoJSON() {
 	demoMarshallStruct()
 
 	demoUnmarshallBasic()
+
+	demoUnmarshallStruct()
 
 }
 
@@ -77,5 +80,21 @@ func demoUnmarshallBasic() {
 	strs := dat["place"].([]interface{})
 	str1 := strs[0].(string)
 	fmt.Println(str1)
+
+}
+
+func demoUnmarshallStruct() {
+
+	fmt.Println("--- Try UnMarshall Struct ---")
+
+	str := `{"coordinate": 1, "planets": ["mercury", "venus"]}`
+	res := mstruct2{}
+	json.Unmarshal([]byte(str), &res)
+	fmt.Println(res)
+	fmt.Println(res.Planet[1])
+
+	enc := json.NewEncoder(os.Stdout)
+	d := map[string]string{"1": "mercury", "2": "venus"}
+	enc.Encode(d)
 
 }
