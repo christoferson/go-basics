@@ -47,4 +47,6 @@ func main() {
 
 	demo.DemoJSON()
 
+	demo.DemoGenerics()
+
 }
